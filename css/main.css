@@ -1,0 +1,126 @@
+/* Constantin Panaitescu | github.com/constantin-p */
+
+html {
+  box-sizing: border-box;
+  font-size: 20px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: #fff;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,  'Helvetica Neue', sans-serif;
+  font-size: .8rem;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+::selection {
+  background: #fff292;
+}
+
+a,
+a:focus,
+a:hover,
+a:active {
+  color: #000;
+  outline: none;
+  text-decoration: none;
+}
+
+
+
+.wrapper { 
+  min-height: 100vh;
+  padding: 5% 10%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+
+
+.links {
+  list-style: none;
+  padding: 1rem 0 0 0;
+}
+
+.links li {
+  color: #000;
+  font-size: 1.1rem;
+  position: relative;
+  margin-bottom: 1.3rem;
+}
+
+.links a {
+  font-size: inherit;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  transition: color .2s ease-in-out;
+}
+
+.links .service {
+  letter-spacing: 1px;
+}
+
+.links .sep {
+  width: 1rem;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 1rem;
+}
+
+.links .sep::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: -.05rem;
+  right: 0;
+  height: .1rem;
+  background-color: #999;
+}
+
+.links .account {
+  color: #999;
+  font-weight: 300;
+  font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', Menlo, Courier, monospace;
+}
+
+
+/* Underline animation */
+.links a::after {
+  position: absolute;
+  content: '';
+  display: block;
+  left: 0;
+  bottom: -.2rem;
+  width: 100%;
+  height: .05rem;
+  background-color: #bbb;
+  transition: transform .2s ease,
+    background-color .2s ease-in-out;
+  transform-origin: 0;
+  transform: scaleX(0);
+}
+
+
+/* hover styles */
+.links li a:hover::after,
+.links li a:focus::after {
+  transform: scaleX(1);
+  background-color: #f6323f;
+}
+
+.links li a:hover,
+.links li a:focus {
+  color: #f6323f;
+}
