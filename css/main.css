@@ -9,15 +9,18 @@ html {
 
 body {
   background: #fff;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,  'Helvetica Neue', sans-serif;
-  font-size: .8rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   margin: 0;
+  color: #000;
 }
 
 ::selection {
   background: #fff292;
+  color: #000;
 }
 
 a,
@@ -42,24 +45,25 @@ h1 {
   letter-spacing: 1px;
   color: #000;
   font-weight: 600;
+  line-height: 1;
   margin-bottom: 3rem;
 }
 
 
 
-.links {
+.links,
+.projects {
   list-style: none;
   padding: 1rem 0 0 0;
 }
 
 .links li {
-  color: #000;
   font-size: 1.1rem;
   position: relative;
   margin-bottom: 1.3rem;
 }
 
-.links a {
+.underline-link {
   font-size: inherit;
   color: inherit;
   font-weight: 600;
@@ -89,6 +93,22 @@ h1 {
   background-color: #999;
 }
 
+.sep-after {
+  position: relative;
+  padding-right: 2.2rem;
+}
+
+.sep-after::after {
+  position: absolute;
+  content: '';
+  right: .6rem;
+  top: 50%;
+  margin-top: -.05rem;
+  height: .1rem;
+  width: 1rem;
+  background-color: #999;
+}
+
 .links .account {
   color: #999;
   font-weight: 300;
@@ -97,7 +117,7 @@ h1 {
 
 
 /* Underline animation */
-.links a::after {
+.underline-link::after {
   position: absolute;
   content: '';
   display: block;
@@ -114,13 +134,75 @@ h1 {
 
 
 /* hover styles */
-.links li a:hover::after,
-.links li a:focus::after {
+.underline-link:hover::after,
+.underline-link:focus::after {
   transform: scaleX(1);
   background-color: #f6323f;
 }
 
-.links li a:hover,
-.links li a:focus {
+.underline-link:hover,
+.underline-link:focus {
   color: #f6323f;
+}
+
+
+
+/* Projects */
+.projects {
+  padding-top: 2.6rem;
+}
+
+.projects .description > span {
+  color: #999;
+  font-weight: 400;
+  font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', Menlo, Courier, monospace;
+}
+
+.projects .links {
+  padding-top: .3rem;
+}
+
+.projects .links > a + a {
+  margin-left: 1rem;
+}
+
+
+
+/* dark > THEME */
+.dark {
+  background-color: #1D1E20;
+  color: #82858A;
+}
+
+.dark h1 {
+  color: #fff;
+}
+
+.dark a,
+.dark a:focus,
+.dark a:hover,
+.dark a:active {
+  color: #82858A;
+}
+
+.dark .links .account,
+.dark .projects .description > span {
+  color: #BBBEC5;
+}
+
+
+/* transition > THEME */
+body {
+  -webkit-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+h1,
+a,
+.links .account,
+.projects .description > span {
+  -webkit-transition: color .2s ease-in-out;
+  -o-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
 }
