@@ -55,8 +55,8 @@
 
   <script type="text/javascript">
     function setTheme() {
-      const currentTime = new Date().getHours();
-      if (20 <= currentTime && currentTime < 8) {
+      const currentTime = (new Date()).getHours();
+      if (20 <= currentTime || currentTime < 8) {
         // Dark theme
         if (!document.body.classList.contains('dark')) {
           document.body.classList.add('dark');
