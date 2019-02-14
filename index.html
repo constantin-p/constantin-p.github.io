@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="author" content="https://github.com/constantin-p/">
 
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#000000">
   <meta name="description" content="Constantin Panaitescu | Software Development">
 
   <title>Constantin Panaitescu | Software Development</title>
@@ -16,61 +16,35 @@
 <body class="dark">
 
   <div class="wrapper">
-    <h1>Constantin Panaitescu</h1>
-    <ul class="links">
-      <li>
-        <a class="underline-link"
-          target="_blank"
-          rel="noopener"
+
+    <header>
+      <h1>Constantin Panaitescu</h1>
+      <h3>Software Developer</h3>
+    </header>
+
+    <main>
+      <section class="links">
+        <a target="_blank" rel="noopener"
           href="https://github.com/constantin-p">
-          <span class="service">GitHub</span>
-          <span class="sep"></span>
-          <span class="account">@constantin-p</span>
+          <span class="service">GitHub</span> (<span>constantin-p</span>) →
         </a>
-      </li>
-    </ul> <!-- ./ links -->
 
-    <ul class="projects">
-      <li>
-        <div class="description">
-          <span class="sep-after">cp-react-tree-table</span>A fast, efficient tree table component for ReactJS.</div>
-        <div class="links">
-          <a class="underline-link"
-            target="_blank"
-            rel="noopener"
-            href="https://constantin-p.github.io/cp-react-tree-table/">
-            <span class="service">website</span>
-          </a>
-          <a class="underline-link"
-            target="_blank"
-            rel="noopener"
-            href="https://www.npmjs.com/package/cp-react-tree-table">
-            <span class="service">npm</span>
-          </a>
-        </div> <!-- ./ links -->
-      </li>
-    </ul> <!-- ./ projects -->
-  </div>
+        <a target="_blank" rel="noopener"
+          href="https://constantin.software">
+          <span class="service">Website</span> (<span>constantin.software</span>) →
+        </a>
+      </section> <!-- ./ links -->
 
+      <section class="projects">
+        <a target="_blank" rel="noopener"
+        href="https://constantin-p.github.io/cp-react-tree-table">
+          <h1>cp-react-tree-table</h1>
+          <p>A fast, efficient tree table component for ReactJS.</p>
+        </a>
+      </section> <!-- ./ projects -->
+    </main>
 
-  <script type="text/javascript">
-    function setTheme() {
-      const currentTime = (new Date()).getHours();
-      if (20 <= currentTime || currentTime < 8) {
-        // Dark theme
-        if (!document.body.classList.contains('dark')) {
-          document.body.classList.add('dark');
-        }
-      } else {
-        // Light theme
-        if (document.body.classList.contains('dark')) {
-          document.body.classList.remove('dark');
-        }
-      }
-    }
+  </div> <!-- ./ wrapper -->
 
-    setTheme();
-  </script>
-  
 </body>
 </html>

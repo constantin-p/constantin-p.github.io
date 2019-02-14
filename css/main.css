@@ -19,7 +19,7 @@ body {
 }
 
 ::selection {
-  background: #fff292;
+  background: rgb(243, 162, 66);
   color: #000;
 }
 
@@ -27,7 +27,6 @@ a,
 a:focus,
 a:hover,
 a:active {
-  color: #000;
   outline: none;
   text-decoration: none;
 }
@@ -38,171 +37,188 @@ a:active {
   min-height: 100vh;
   padding: 5% 10%;
   box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  color: #000;
-  font-weight: 600;
-  line-height: 1;
-  margin-bottom: 3rem;
-}
-
-
-
-.links,
-.projects {
-  list-style: none;
-  padding: 1rem 0 0 0;
-}
-
-.links li {
-  font-size: 1.1rem;
-  position: relative;
-  margin-bottom: 1.3rem;
-}
-
-.underline-link {
-  font-size: inherit;
-  color: inherit;
-  font-weight: 600;
-  position: relative;
-  transition: color .2s ease-in-out;
-}
-
-.links .service {
-  letter-spacing: 1px;
-}
-
-.links .sep {
-  width: 1rem;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  margin: 0 1rem;
-}
-
-.links .sep::after {
-  position: absolute;
-  content: '';
-  left: 0;
-  top: -.05rem;
-  right: 0;
-  height: .1rem;
-  background-color: #999;
-}
-
-.sep-after {
-  position: relative;
-  padding-right: 2.2rem;
-}
-
-.sep-after::after {
-  position: absolute;
-  content: '';
-  right: .6rem;
-  top: 50%;
-  margin-top: -.05rem;
-  height: .1rem;
-  width: 1rem;
-  background-color: #999;
-}
-
-.links .account {
-  color: #999;
-  font-weight: 300;
-  font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', Menlo, Courier, monospace;
-}
-
-
-/* Underline animation */
-.underline-link::after {
-  position: absolute;
-  content: '';
-  display: block;
-  left: 0;
-  bottom: -.2rem;
+.wrapper > header,
+.wrapper > main {
   width: 100%;
-  height: .05rem;
-  background-color: #bbb;
-  transition: transform .2s ease,
-    background-color .2s ease-in-out;
-  transform-origin: 0;
-  transform: scaleX(0);
+  flex: 0 1 0;
 }
 
 
-/* hover styles */
-.underline-link:hover::after,
-.underline-link:focus::after {
-  transform: scaleX(1);
-  background-color: #f6323f;
+/* HEADER */
+header > h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #000;
+  margin: 0 0 0.4rem 0 ;
 }
 
-.underline-link:hover,
-.underline-link:focus {
-  color: #f6323f;
-}
-
-
-
-/* Projects */
-.projects {
-  padding-top: 2.6rem;
-}
-
-.projects .description > span {
-  color: #999;
+header > h3 {
+  font-size: .9rem;
   font-weight: 400;
-  font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', Menlo, Courier, monospace;
-}
-
-.projects .links {
-  padding-top: .3rem;
-}
-
-.projects .links > a + a {
-  margin-left: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0 0 1.4rem 0;
 }
 
 
-
-/* dark > THEME */
-.dark {
-  background-color: #1D1E20;
-  color: #82858A;
-}
-
-.dark h1 {
-  color: #fff;
-}
-
-.dark a,
-.dark a:focus,
-.dark a:hover,
-.dark a:active {
-  color: #82858A;
-}
-
-.dark .links .account,
-.dark .projects .description > span {
-  color: #BBBEC5;
+/* MAIN */
+main > .links,
+main > .projects {
+  display: flex;
+  flex-direction: column;
 }
 
 
-/* transition > THEME */
-body {
-  -webkit-transition: background-color .2s ease-in-out;
-  -o-transition: background-color .2s ease-in-out;
-  transition: background-color .2s ease-in-out;
+/* LINKS */
+.links {
+  align-items: flex-start;
 }
 
-h1,
-a,
-.links .account,
-.projects .description > span {
-  -webkit-transition: color .2s ease-in-out;
-  -o-transition: color .2s ease-in-out;
-  transition: color .2s ease-in-out;
+.links > a {
+  display: block;
+  font-size: .9rem;
+  margin: .5rem 0 0 0;
+  color: rgba(0, 0, 0, 0.5);
+
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgba(246, 50, 63, 0.75), rgb(246, 50, 63));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+
+  -webkit-transition: background-size 0.3s;
+  -o-transition: background-size 0.3s;
+  transition: background-size 0.3s;
 }
+
+.links > a > .service {
+  display: inline-block;
+  min-width: 70px;
+}
+
+.links > a > .service + span {
+  color: #000;
+}
+
+.links > a:hover > .service + span,
+.links > a:focus > .service + span {
+  color: rgb(246, 50, 63);
+}
+
+.links > a:hover,
+.links > a:focus {
+  color: rgba(246, 50, 63, 0.75);
+  background-size: 100% 2px;
+}
+
+
+/* SEPARATOR */
+.links + .projects {
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+
+/* PROJECTS */
+.projects > a {
+  display: block;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.08);
+
+  -webkit-transition: transform 0.3s ease, background 0.3s ease;
+  -o-transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.projects > a + a {
+  margin-top: 1.2rem;
+}
+
+.projects > a:hover,
+.projects > a:focus {
+  transform: scale(1.04);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.projects > a > h1 {
+  color: #000;
+  font-weight: 400;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.projects > a > p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: .75rem;
+  margin: .5rem 0 0 0;
+}
+
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+  .wrapper { 
+    flex-direction: row;
+  }
+
+  .wrapper > header,
+  .wrapper > main {
+    width: 50%;
+    flex: 1 1 0;
+  }
+
+  header > h1 {
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+
+/* DARK THEME */
+@media (prefers-color-scheme: dark) {
+  body { background: #000; color: #fff; }
+  ::selection { color: #fff; }
+
+  header > h1 { color: #fff; }
+  header > h3 { color: rgba(255, 255, 255, 0.5); }
+  .links > a { color: rgba(255, 255, 255, 0.5); }
+  .links > a > .service + span { color: #fff; }
+  .links > a:hover > .service + span,
+  .links > a:focus > .service + span { color: rgb(246, 50, 63); }
+  .links > a:hover,
+  .links > a:focus { color: rgba(246, 50, 63, 0.75); }
+  .links + .projects { border-top-color: rgba(255, 255, 255, 0.13); }
+  .projects > a { background: rgba(255, 255, 255, 0.08); }
+  .projects > a:hover,
+  .projects > a:focus { background: rgba(255, 255, 255, 0.16); }
+  .projects > a > h1 { color: #fff; }
+  .projects > a > p { color: rgba(255, 255, 255, 0.5); }
+}
+
+body.dark { background: #000; color: #fff; }
+body.dark ::selection { color: #fff; }
+
+body.dark header > h1 { color: #fff; }
+body.dark header > h3 { color: rgba(255, 255, 255, 0.5); }
+body.dark .links > a { color: rgba(255, 255, 255, 0.5); }
+body.dark .links > a > .service + span { color: #fff; }
+body.dark .links > a:hover > .service + span,
+body.dark .links > a:focus > .service + span { color: rgb(246, 50, 63); }
+body.dark .links > a:hover,
+body.dark .links > a:focus { color: rgba(246, 50, 63, 0.75); }
+body.dark .links + .projects { border-top-color: rgba(255, 255, 255, 0.13); }
+body.dark .projects > a { background: rgba(255, 255, 255, 0.08); }
+body.dark .projects > a:hover,
+body.dark .projects > a:focus { background: rgba(255, 255, 255, 0.16); }
+body.dark .projects > a > h1 { color: #fff; }
+body.dark .projects > a > p { color: rgba(255, 255, 255, 0.5); }
+
